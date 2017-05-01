@@ -1,2 +1,6 @@
 # Untitled-Unity-Game
-Untitled Unity Game. So far, only character controller is done.
+Untitled Unity Game.
+What's done so far:
+* Character controller
+* Camera
+* Shooting
