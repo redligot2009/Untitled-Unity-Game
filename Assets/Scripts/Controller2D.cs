@@ -121,50 +121,10 @@ public class Controller2D : MonoBehaviour {
         transform.Translate(deltaMovement);
     }
     
-	void Update ()
+	void FixedUpdate ()
     {
         Move(velocity);
         moveDir = new Vector3(Mathf.Sign(velocity.x), Mathf.Sign(velocity.y));
-        if (Input.GetKey(KeyCode.A))
-        {
-            velocity.x -= 1 * Time.deltaTime;
-        }
-        if (velocity.x < 0 && myCollisions.left)
-        {
-            velocity.x = 0;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            velocity.x += 1 * Time.deltaTime;
-        }
-        if (velocity.x > 0 && myCollisions.right)
-        {
-            velocity.x = 0;
-        }
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-        {
-            velocity.x = Mathf.Lerp(velocity.x, 0, Time.deltaTime * 8f);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            velocity.y -= 1 * Time.deltaTime;
-        }
-        if (velocity.y < 0 && myCollisions.down)
-        {
-            velocity.y = 0;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            velocity.y += 1 * Time.deltaTime;
-        }
-        if (velocity.y > 0 && myCollisions.up)
-        {
-            velocity.y = 0;
-        }
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
-        {
-            velocity.y = Mathf.Lerp(velocity.y, 0, Time.deltaTime * 8f);
-        }
         velocity.x = Mathf.Clamp(velocity.x, -maxVelocity.x * Time.deltaTime, maxVelocity.x * Time.deltaTime);
         velocity.y = Mathf.Clamp(velocity.y, -maxVelocity.y * Time.deltaTime, maxVelocity.y * Time.deltaTime);
     }
