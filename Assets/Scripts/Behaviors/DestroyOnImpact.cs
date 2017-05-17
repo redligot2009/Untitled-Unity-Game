@@ -15,7 +15,7 @@ public class DestroyOnImpact : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * Mathf.Sign(mover.velocity.x), myCollider.bounds.extents.x, wall);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, mover.transform.up, myCollider.bounds.extents.x, wall);
 
         if (hit)
         {

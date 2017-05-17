@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MainScene.unity
+- path: C:/Users/Quasar/Documents/Unity Projects/Platformer Thing/Assets/Scenes/Level1.unity
   isLoaded: 1
   isActive: 1

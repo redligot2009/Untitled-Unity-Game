@@ -60,6 +60,7 @@ public class Player : MonoBehaviour {
         }
 
         int mouseDirX = 0, mouseDirY = 0;
+        float angle = 0;
 
         if(Input.GetKey(KeyCode.UpArrow))
         {
@@ -96,13 +97,11 @@ public class Player : MonoBehaviour {
             if (clone != null)
             {
                 LinearTravel mover = clone.GetComponent<LinearTravel>();
+                Vector3 mouseDir = new Vector3(mouseDirX, mouseDirY).normalized;
                 clone.transform.position = transform.position;
-                mover.velocity.x = mover.moveSpeed.x * mouseDirX;
-                mover.velocity.y = mover.moveSpeed.y * mouseDirY;
-                if(mouseDirX == 0 && mouseDirY == 0)
-                {
-                    mover.velocity.x = mover.moveSpeed.x;
-                }
+                mover.velocity = mover.moveSpeed;
+                angle = Vector3.Angle(Vector3.zero, mouseDir);
+                mover.transform.eulerAngles = Quaternion.Euler(0, 0, 45) * mover.transform.eulerAngles;
             }
             timer = 0.25f;
         }

@@ -14,7 +14,8 @@ public class CameraFollow : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update ()
+    {
         float halfWidth = Camera.main.orthographicSize;
         float halfHeight = Camera.main.orthographicSize*(Screen.width/Screen.height);
         myPosition.x = Mathf.Lerp(myPosition.x, target.transform.position.x, Time.deltaTime * cameraSpeed);

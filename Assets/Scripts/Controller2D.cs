@@ -121,7 +121,7 @@ public class Controller2D : MonoBehaviour {
         transform.Translate(deltaMovement);
     }
     
-	void FixedUpdate ()
+	void Update ()
     {
         Move(velocity);
         moveDir = new Vector3(Mathf.Sign(velocity.x), Mathf.Sign(velocity.y));
